@@ -1,6 +1,6 @@
 # SPEC-initial.md — wearemobi-www
 ## We Are Mobi · Website v1.0
-> Stack: Next.js 14 App Router · Tailwind CSS  
+> Stack: Next.js 16 App Router · Tailwind CSS  
 > Methodology: Spec Driven Development — no code without an approved spec
 
 ---
@@ -140,14 +140,15 @@
 
 ```
 wearemobi-www/
-├── app/
-│   ├── layout.tsx          # fonts, metadata, theme provider
-│   ├── page.tsx            # single page — full layout
-│   └── globals.css         # CSS variables, reset, animations
-├── components/
-│   ├── LogoBlock.tsx       # logo + name + tagline
-│   ├── ChatPrompt.tsx      # input bar UI — no logic
-│   └── ThemeToggle.tsx     # dark/light switch
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx          # fonts, metadata, theme provider
+│   │   ├── page.tsx            # single page — full layout
+│   │   └── globals.css         # CSS variables, reset, animations
+│   └── components/
+│       ├── LogoBlock.tsx       # logo + name + tagline
+│       ├── ChatPrompt.tsx      # input bar UI — no logic
+│       └── ThemeToggle.tsx     # dark/light switch
 └── public/
     └── favicon.ico
 ```
