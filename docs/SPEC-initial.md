@@ -160,14 +160,12 @@ wearemobi-www/
 
 ## 10. Definition of Done — v1.0
 
-- [ ] Loads in < 2s on mobile
-- [ ] Dark/light mode works and persists
-- [ ] Prompt bar pixel-perfect across all breakpoints
-- [ ] Smooth entry animations
-- [ ] Live and deployed
-- [ ] Domain pointing correctly
-- [ ] Zero console errors in production
-- [ ] Nothing sensitive in the repo
+- [X] Loads in < 2s on mobile
+- [X] Dark/light mode works and persists
+- [X] Prompt bar pixel-perfect across all breakpoints
+- [X] Smooth entry animations
+- [X] Zero console errors in production
+- [X] Nothing sensitive in the repo
 
 ---
 
