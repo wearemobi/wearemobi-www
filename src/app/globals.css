@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Inter:wght@400;500&display=swap');
+@import "tailwindcss";
+@import "tailwindcss/preflight";
+
+@theme {
+  --color-bg: #F0F8FF;
+  --color-surface: #FFFFFF;
+  --color-border: #E2E8F0;
+  --color-text-primary: #0A1628;
+  --color-text-muted: #6B7280;
+  --color-accent-cyan: #00C2FF;
+  --color-accent-green: #00A880;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  transition: background-color 300ms, color 300ms;
+}
+
+.dark {
+  --bg: #0A1628;
+  --surface: #111C2E;
+  --border: #1E2D45;
+  --text-primary: #F8FAFC;
+  --text-muted: #6B7280;
+  --accent-cyan: #00C2FF;
+  --accent-green: #00E5B0;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-entry {
+  animation: fadeSlideUp 600ms ease-out forwards;
+}
+
+.animate-entry-delay-1 {
+  animation: fadeSlideUp 600ms ease-out 150ms forwards;
+  opacity: 0;
+}
+
+.animate-entry-delay-2 {
+  animation: fadeSlideUp 600ms ease-out 300ms forwards;
+  opacity: 0;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}

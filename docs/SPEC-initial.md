@@ -1,6 +1,6 @@
 # SPEC-initial.md — wearemobi-www
 ## We Are Mobi · Website v1.0
-> Stack: Next.js 14 App Router · Tailwind CSS  
+> Stack: Next.js 16 App Router · Tailwind CSS v4
 > Methodology: Spec Driven Development — no code without an approved spec
 
 ---
@@ -140,14 +140,15 @@
 
 ```
 wearemobi-www/
-├── app/
-│   ├── layout.tsx          # fonts, metadata, theme provider
-│   ├── page.tsx            # single page — full layout
-│   └── globals.css         # CSS variables, reset, animations
-├── components/
-│   ├── LogoBlock.tsx       # logo + name + tagline
-│   ├── ChatPrompt.tsx      # input bar UI — no logic
-│   └── ThemeToggle.tsx     # dark/light switch
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx          # fonts, metadata, theme provider
+│   │   ├── page.tsx            # single page — full layout
+│   │   └── globals.css         # CSS variables, reset, animations
+│   └── components/
+│       ├── LogoBlock.tsx       # logo + name + tagline
+│       ├── ChatPrompt.tsx      # input bar UI — no logic
+│       └── ThemeToggle.tsx     # dark/light switch
 └── public/
     └── favicon.ico
 ```
@@ -159,14 +160,12 @@ wearemobi-www/
 
 ## 10. Definition of Done — v1.0
 
-- [ ] Loads in < 2s on mobile
-- [ ] Dark/light mode works and persists
-- [ ] Prompt bar pixel-perfect across all breakpoints
-- [ ] Smooth entry animations
-- [ ] Live and deployed
-- [ ] Domain pointing correctly
-- [ ] Zero console errors in production
-- [ ] Nothing sensitive in the repo
+- [X] Loads in < 2s on mobile
+- [X] Dark/light mode works and persists
+- [X] Prompt bar pixel-perfect across all breakpoints
+- [X] Smooth entry animations
+- [X] Zero console errors in production
+- [X] Nothing sensitive in the repo
 
 ---
 
