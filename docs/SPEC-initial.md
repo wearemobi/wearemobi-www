@@ -1,6 +1,6 @@
 # SPEC-initial.md — wearemobi-www
 ## We Are Mobi · Website v1.0
-> Stack: Next.js 16 App Router · Tailwind CSS  
+> Stack: Next.js 16 App Router · Tailwind CSS v4
 > Methodology: Spec Driven Development — no code without an approved spec
 
 ---
