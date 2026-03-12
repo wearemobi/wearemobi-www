@@ -24,12 +24,12 @@ developer doc.
 - Project name + one-line description
 - Tech stack (Next.js 16, Tailwind v4, Cloudflare Pages)
 - Local setup:
-  ```
+```
 git clone https://github.com/wearemobi/wearemobi-www
 cd wearemobi-www
 npm install
 npm run dev
-  ```
+```
 - Branch convention reference → `docs/git-convention.md`
 - SPEC reference → `docs/SPEC-initial.md`
 
@@ -72,7 +72,7 @@ Files to audit:
 
 ## 3. Definition of Done — v1.1
 
-- [ ] README renders correctly on GitHub with all sections
+- [X] README renders correctly on GitHub with all sections
 - [ ] Logo SVG displays correctly in dark and light mode
 - [ ] Footer shows `Copyright (c) 2025 We Are Mobi™` only
 - [ ] No Vercel assets or references in repo
