@@ -1,20 +1,10 @@
+import LogoIcon from "@/components/LogoIcon";
+
 export default function LogoBlock() {
   return (
     <div className="flex flex-col items-center gap-4 animate-entry">
       {/* Logo icon */}
-      <div className="w-12 h-12 flex items-center justify-center rounded-lg"
-           style={{ backgroundColor: "var(--text-primary)" }}>
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <text
-                  x="14"
-                  y="21"
-                  textAnchor="middle"
-                  fontFamily="'Syne', sans-serif"
-                  fontWeight="800"
-                  fontSize="20"
-                  fill="var(--bg)">M</text>
-            </svg>
-        </div>
+      <LogoIcon />
 
       {/* Brand name */}
       <h1
