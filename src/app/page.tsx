@@ -11,11 +11,8 @@ export default function Home() {
       <ThemeToggle />
       <LogoBlock />
       <ChatPrompt />
-      <footer
-        className="absolute bottom-6 text-sm"
-        style={{ color: "var(--text-muted)" }}
-      >
-        Costa Rica 🇨🇷 · wearemobi.com
+      <footer className="absolute bottom-6 text-sm" style={{ color: "var(--text-muted)" }}>
+        Copyright &copy; 2026 We Are Mobi™
       </footer>
     </main>
   );
