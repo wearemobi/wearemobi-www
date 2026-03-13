@@ -1,4 +1,5 @@
 # wearemobi-www
+
 We Are Mobi™ — official website
 
 ## Tech Stack
@@ -9,6 +10,7 @@ We Are Mobi™ — official website
 - Methodology: Spec Driven Development
 
 ## Local Setup
+
 ```bash
 git clone https://github.com/wearemobi/wearemobi-www
 cd wearemobi-www

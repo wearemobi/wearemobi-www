@@ -1,5 +1,7 @@
 # SPEC-v1.2.md — wearemobi-www
+
 ## We Are Mobi · Website v1.2 — Branding, Polish & Dev Tooling
+
 > Stack: Next.js 16 App Router · Tailwind CSS v4
 > Methodology: Spec Driven Development — no code without an approved spec
 > Builds on: docs/SPEC-v1.1.md
@@ -21,71 +23,91 @@ No new pages. No new features. No AI integration.
 Add `™` after `WE ARE MOBI` in the LogoBlock component.
 
 **Spec:**
+
 - Symbol: `™` (U+2122)
 - Rendered as: `WE ARE MOBI™`
-- Style: `text-xs`, `align-super`, `--text-muted` color
+- Style: `font-size: 0.25em`, `verticalAlign: super`, `--text-muted` color
 - Must not break existing layout or animation
 
----
-
-### 2.2 Logo Icon — Square, Larger
-
-Update the inline SVG logo icon.
-
-**Spec:**
-- Remove border radius → `rounded-none` (sharp square)
-- New size: `56x56px` desktop · `48x48px` mobile (up from 48/40)
-- Black background, white `M` lettermark — no change to content
-- Must remain inline SVG, no `<img>` tag
+**Implemented:** ✅
 
 ---
 
-### 2.3 Footer — Re-enable Email
+### 2.2 Logo Icon — SVG Files, Square, Larger
 
-Cloudflare Email Forwarding is being configured. Re-enable the email in the footer.
+Replace inline SVG placeholder with official brand icon files.
 
 **Spec:**
-- Current: `wearemobi.com · contact@wearemobi.com` (hidden or removed in v1.1)
-- New: restore `wearemobi.com · contact@wearemobi.com`
-- Email renders as a `mailto:` link
-- Style: `Inter`, `text-sm`, `--text-muted` — no change from original design
+
+- Two SVG files in `/public`: `icon-light.svg` (black bg, white m) and `icon-dark.svg` (white bg, navy m)
+- Sharp square — no border radius
+- Size: `w-24 h-24 md:w-28 md:h-28` (up from 48/40px)
+- Uses `next/image` with `MutationObserver` to swap based on theme
+- `m` lowercase, Helvetica Neue 700, matches official brand
+
+**Implemented:** ✅
 
 ---
 
-### 2.4 Chat Input — Border Contrast in Light Mode
+### 2.3 Footer — Re-enable Email + GitHub Link
 
-The chat input border is too subtle in light mode. Increase contrast.
+Re-enable email and add GitHub organization link.
 
 **Spec:**
-- Dark mode: no change
-- Light mode: border color → `#CBD5E1` (up from current `--border`)
-- Apply only to the prompt bar component (`ChatPrompt.tsx`)
+
+- Layout: `flex items-center gap-3`
+- Links: `wearemobi.com · contact@wearemobi.com · GitHub`
+- Email renders as `mailto:` link
+- GitHub renders as inline SVG icon + text, links to `github.com/wearemobi`
+- GitHub SVG: `width=16 height=16`, `shapeRendering: geometricPrecision`
+- Font: `var(--font-inter), sans-serif`, `text-sm`, `--text-muted`
+
+**Implemented:** ✅
 
 ---
 
-### 2.5 Favicon — Replace with Mobi Icon
-
-Replace the default Next.js favicon with the Mobi `M` icon.
+### 2.4 Chat Input — Border Contrast + Height + Placeholder Fix
 
 **Spec:**
-- Format: `.ico` (32x32) + `.png` (192x192, 512x512) for PWA readiness
-- Design: black square, white `M` — matches logo icon
-- Files go in `/public`
-- Reference in `app/layout.tsx` via Next.js metadata API
+
+- Dark mode: no change to border
+- Light mode: border color → `#CBD5E1`
+- `minHeight: 64px` for better proportions
+- Rotating placeholder hides when user types (`inputValue === ""` condition)
+- Placeholder font: `var(--font-inter), sans-serif`
+- Submit button hover: white/muted — no cyan
+- Container: `position: relative` for correct absolute placeholder positioning
+
+**Implemented:** ✅
+
+---
+
+### 2.5 Favicon — SVG via Metadata API
+
+Replace default Next.js favicon with Mobi icon.
+
+**Spec:**
+
+- Reference `icon-light.svg` via Next.js metadata API (`type: image/svg+xml`)
 - Remove any existing Vercel or Next.js default favicon files
+- PNG favicons deferred — SVG supported by all modern browsers
+
+**Implemented:** ✅
 
 ---
 
 ### 2.6 Font Audit & Optimization
 
-Audit current font loading and optimize.
-
 **Spec:**
-- Confirm only `Syne` and `Inter` are loaded (no unused fonts)
-- Use `next/font/google` with `display: swap` for both
-- Remove any `@import` from CSS — fonts must load via `next/font` only
-- Subset: `latin` only
-- Verify no layout shift on load (CLS = 0)
+
+- Replace `Syne` with `Urbanist` for headlines — closer to brand's Brandon Grotesque aesthetic
+- Load `Urbanist` (weight 800) and `Inter` (weight 400, 500) via `next/font/google`
+- Remove `@import` from `globals.css` — fonts load via `next/font` only
+- Subset: `latin` only, `display: swap`
+- CSS variables: `--font-urbanist`, `--font-inter`
+- Add `-webkit-font-smoothing: antialiased` and `-moz-osx-font-smoothing: grayscale` to `body`
+
+**Implemented:** ✅
 
 ---
 
@@ -95,37 +117,40 @@ Shift palette to grayscale-first. Cyan is on hold until corporate color is defin
 
 **Spec:**
 
-| Token | Current | New |
-|---|---|---|
-| `--accent-cyan` | `#00C2FF` | `#F8FAFC` (near-white) |
-| Submit button hover | cyan | white with dark border |
-| Any cyan text/border | cyan | `--text-muted` or white |
+| Token                | Current   | New                     |
+|----------------------|-----------|-------------------------|
+| `--accent-cyan`      | `#00C2FF` | commented out on hold   |
+| Submit button hover  | cyan      | white with dark border  |
+| Any cyan text/border | cyan      | `--text-muted` or white |
 
-- Do not remove the `--accent-cyan` CSS variable — comment it with `/* on hold */`
-- No cyan visible anywhere in the UI after this change
+- CSS variable commented with `/* on hold: --accent-cyan: #00c2ff; */`
+- No cyan visible anywhere in the UI
 - Dark mode and light mode both affected
+
+**Implemented:** ✅
 
 ---
 
 ### 2.8 SVG Consistency
 
-Ensure all SVGs in the site match the black & white official logo style.
-
 **Spec:**
-- Audit all SVGs in `/public` and components
-- Remove any colored or off-brand SVGs not used in production
-- Theme toggle icons (sun/moon): must use `currentColor` — no hardcoded colors
-- All SVGs must render correctly in both dark and light mode
+
+- All SVGs in `/public` audited
+- ThemeToggle icons use `currentColor` — no hardcoded colors
+- `aria-hidden="true"` on decorative SVGs
+- `strokeLinecap="round"` and `strokeLinejoin="round"` on ThemeToggle SVGs
+- GitHub icon uses `shapeRendering: geometricPrecision`
+
+**Implemented:** ✅
 
 ---
 
 ### 2.9 Prettier + ESLint Setup
 
-Add code formatting and linting tooling to the repo.
-
 **Spec:**
 
 **Prettier:**
+
 ```json
 {
   "semi": false,
@@ -137,87 +162,100 @@ Add code formatting and linting tooling to the repo.
 ```
 
 **ESLint:**
-- Extend `next/core-web-vitals`
-- No custom rules in v1.2 — defaults only
-- Add `lint` script to `package.json`: `"lint": "next lint"`
-- Add `format` script: `"format": "prettier --write ."`
 
-Files to create:
-- `.prettierrc`
-- `.eslintrc.json` (if not already present)
-- `.prettierignore` → ignore `node_modules`, `.next`, `public`
+- Extend `next/core-web-vitals`
+- Replace `eslint.config.mjs` with `.eslintrc.json`
+- Add `lint` script: `"lint": "next lint"`
+- Add `format` script: `"format": "prettier --write ."`
+- `.prettierignore`: `node_modules`, `.next`, `public`
+
+**Implemented:** ✅
 
 ---
 
 ### 2.10 Prod Optimization
 
 **Spec:**
-- Confirm `next.config.js` has `images.unoptimized: false`
-- Enable `compress: true` in next config
-- Verify `"build"` script runs without warnings
-- No `console.log` statements in production code
+
+- `compress: true` in `next.config.ts`
+- `images.unoptimized: false`
+- `metadataBase: new URL('https://wearemobi.com')` — fixes OG warning
+- Theme init script moved from `<head>` to `<body>` — fixes missing `<title>` warning
+- `npm run build` passes with zero warnings
+
+**Implemented:** ✅
 
 ---
 
 ### 2.11 Clean Unused SVGs in `/public`
 
 **Spec:**
-- Audit all files in `/public`
-- Delete any SVG not referenced in code (Vercel, Next.js defaults, etc.)
-- Keep only: favicon files + any SVG actively used in components
-- Document what was removed in the PR description
+
+- Removed: `vercel.svg`, `next.svg`, `file.svg`, `globe.svg`, `window.svg`
+- Kept: `icon-dark.svg`, `icon-light.svg`, `og-image.png`
+
+**Implemented:** ✅
 
 ---
 
 ### 2.12 OG Image
 
-Add a basic Open Graph image for link previews.
-
 **Spec:**
+
 - File: `/public/og-image.png`
 - Size: `1200x630px`
-- Design: dark background (`#0A1628`), white `WE ARE MOBI™` centered, tagline below in muted
-- Reference in `app/layout.tsx`:
-```tsx
-openGraph: {
-  title: 'We Are Mobi',
-  description: 'AI-native software development from Costa Rica.',
-  images: ['/og-image.png'],
-}
-```
-- Static file — no dynamic OG in v1.2
+- Design: dark background `#0A1628`, white `WE ARE MOBI` centered, tagline in muted
+- Referenced in `layout.tsx` via `openGraph.images`
+
+**Implemented:** ✅
 
 ---
 
 ### 2.13 README — Contributing URL
 
-Confirm the contributing URL in README points to the org profile.
+**Spec:**
+
+- URL confirmed: `https://github.com/wearemobi/.github/blob/main/CONTRIBUTING.md`
+- Renders correctly on GitHub
+
+**Implemented:** ✅
+
+---
+
+### 2.14 Headline Typography (Added during implementation)
 
 **Spec:**
-- URL: `https://github.com/wearemobi`
-- Verify it renders correctly on GitHub
-- No other README changes in this spec
+
+- Font: `Urbanist 800` — closer to Brandon Grotesque than Syne
+- Size: `clamp(2rem, 5vw, 3.5rem)` — responsive without Tailwind dependency
+- `fontWeight: 900`, `letterSpacing: -0.02em`, `lineHeight: 1`
+- `display: inline-block` for correct transform behavior
+
+**Implemented:** ✅
 
 ---
 
 ## 3. Definition of Done — v1.2
 
-- [ ] `WE ARE MOBI™` renders correctly in both modes
-- [ ] Logo icon is sharp square, larger size, both modes
-- [ ] Chat input border visible in light mode
-- [ ] Favicon is Mobi `M` icon — no Next.js/Vercel defaults
-- [ ] Only `Syne` + `Inter` loaded via `next/font`
-- [ ] No cyan visible anywhere in the UI
-- [ ] All SVGs use `currentColor` or are black/white on-brand
-- [ ] `.prettierrc` and `.eslintrc.json` present and working
-- [ ] `npm run lint` passes with zero errors
-- [ ] `npm run build` passes with zero warnings
-- [ ] No `console.log` in production code
-- [ ] `/public` contains only referenced files
-- [ ] OG image present and referenced in metadata
-- [ ] README contributing URL points to `github.com/wearemobi`
-- [ ] Zero console errors in production
-- [ ] No regressions from v1.1
+- [x] `WE ARE MOBI™` renders correctly in both modes
+- [x] Logo icon is sharp square, larger size, both modes
+- [x] Chat input border visible in light mode
+- [x] Favicon is Mobi SVG icon — no Next.js/Vercel defaults
+- [x] Only `Urbanist` + `Inter` loaded via `next/font`
+- [x] No cyan visible anywhere in the UI
+- [x] All SVGs use `currentColor` or are black/white on-brand
+- [x] `.prettierrc` and `.eslintrc.json` present and working
+- [x] `npm run lint` passes with zero errors
+- [x] `npm run build` passes with zero warnings
+- [x] No `console.log` in production code
+- [x] `/public` contains only referenced files
+- [x] OG image present and referenced in metadata
+- [x] README contributing URL points to `github.com/wearemobi`
+- [x] Zero console errors in production
+- [x] No regressions from v1.1
+- [x] Font smoothing applied globally
+- [x] GitHub link in footer
+- [x] Chat input placeholder hides on type
 
 ---
 

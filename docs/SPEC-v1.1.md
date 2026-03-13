@@ -1,5 +1,7 @@
 # SPEC-v1.1.md — wearemobi-www
+
 ## We Are Mobi · Website v1.1 — Polish & Fixes
+
 > Stack: Next.js 16 App Router · Tailwind CSS v4
 > Methodology: Spec Driven Development — no code without an approved spec
 > Builds on: docs/SPEC-initial.md (v1.0)
@@ -21,15 +23,18 @@ The README was overwritten during the v1.0 merge. Restore it as a proper
 developer doc.
 
 **Required sections:**
+
 - Project name + one-line description
 - Tech stack (Next.js 16, Tailwind v4, Cloudflare Pages)
 - Local setup:
+
 ```
 git clone https://github.com/wearemobi/wearemobi-www
 cd wearemobi-www
 npm install
 npm run dev
 ```
+
 - Branch convention reference → `docs/git-convention.md`
 - SPEC reference → `docs/SPEC-initial.md`
 
@@ -40,6 +45,7 @@ npm run dev
 Replace the placeholder `[ m ]` text with a proper inline SVG logo.
 
 **Spec:**
+
 - Black background box, rounded corners (`rounded-lg`)
 - White `M` lettermark, bold, centered
 - Size: `48x48px` desktop · `40x40px` mobile
@@ -64,6 +70,7 @@ Rationale: global-first positioning, no geographic anchoring in v1.
 - Confirm no Vercel deploy config files exist in repo
 
 Files to audit:
+
 - `public/vercel.svg` → delete
 - Any `vercel.json` → delete if present
 - Any `<!-- Deploy on Vercel -->` comments → remove
@@ -72,12 +79,12 @@ Files to audit:
 
 ## 3. Definition of Done — v1.1
 
-- [X] README renders correctly on GitHub with all sections
-- [X] Logo SVG displays correctly in dark and light mode
-- [X] Footer shows `Copyright (c) 2026 We Are Mobi™` only
-- [X] No Vercel assets or references in repo
-- [X] Zero console errors
-- [X] No regressions from v1.0
+- [x] README renders correctly on GitHub with all sections
+- [x] Logo SVG displays correctly in dark and light mode
+- [x] Footer shows `Copyright (c) 2026 We Are Mobi™` only
+- [x] No Vercel assets or references in repo
+- [x] Zero console errors
+- [x] No regressions from v1.0
 
 ---
 

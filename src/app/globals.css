@@ -1,15 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Inter:wght@400;500&display=swap');
-@import "tailwindcss";
-@import "tailwindcss/preflight";
+@import 'tailwindcss';
+@import 'tailwindcss/preflight';
+
+/* Fonts are loaded via next/font in layout.tsx — no @import needed here */
 
 @theme {
-  --color-bg: #F0F8FF;
-  --color-surface: #FFFFFF;
-  --color-border: #E2E8F0;
-  --color-text-primary: #0A1628;
-  --color-text-muted: #6B7280;
-  --color-accent-cyan: #00C2FF;
-  --color-accent-green: #00A880;
+  /* on hold: --color-accent-cyan: #00C2FF; */
+  --color-bg: #f0f8ff;
+  --color-surface: #ffffff;
+  --color-border: #e2e8f0;
+  --color-text-primary: #0a1628;
+  --color-text-muted: #6b7280;
+  --color-accent-green: #00a880;
 }
 
 * {
@@ -21,23 +22,32 @@
 body {
   background-color: var(--bg);
   color: var(--text-primary);
-  font-family: 'Inter', sans-serif;
-  transition: background-color 300ms, color 300ms;
+  transition:
+    background-color 300ms,
+    color 300ms;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .dark {
-  --bg: #0A1628;
-  --surface: #111C2E;
-  --border: #1E2D45;
-  --text-primary: #F8FAFC;
-  --text-muted: #6B7280;
-  --accent-cyan: #00C2FF;
-  --accent-green: #00E5B0;
+  --bg: #0a1628;
+  --surface: #111c2e;
+  --border: #1e2d45;
+  --text-primary: #f8fafc;
+  --text-muted: #6b7280;
+  /* on hold: --accent-cyan: #00c2ff; */
+  --accent-green: #00e5b0;
 }
 
 @keyframes fadeSlideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-entry {
@@ -55,8 +65,13 @@ body {
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .cursor-blink {
