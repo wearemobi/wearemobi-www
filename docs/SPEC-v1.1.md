@@ -73,11 +73,11 @@ Files to audit:
 ## 3. Definition of Done — v1.1
 
 - [X] README renders correctly on GitHub with all sections
-- [ ] Logo SVG displays correctly in dark and light mode
-- [ ] Footer shows `Copyright (c) 2026 We Are Mobi™` only
-- [ ] No Vercel assets or references in repo
-- [ ] Zero console errors
-- [ ] No regressions from v1.0
+- [X] Logo SVG displays correctly in dark and light mode
+- [X] Footer shows `Copyright (c) 2026 We Are Mobi™` only
+- [X] No Vercel assets or references in repo
+- [X] Zero console errors
+- [X] No regressions from v1.0
 
 ---
 
