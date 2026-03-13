@@ -74,7 +74,7 @@ Files to audit:
 
 - [X] README renders correctly on GitHub with all sections
 - [ ] Logo SVG displays correctly in dark and light mode
-- [ ] Footer shows `Copyright (c) 2025 We Are Mobi™` only
+- [ ] Footer shows `Copyright (c) 2026 We Are Mobi™` only
 - [ ] No Vercel assets or references in repo
 - [ ] Zero console errors
 - [ ] No regressions from v1.0
