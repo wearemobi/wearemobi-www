@@ -1,32 +1,28 @@
-"use client";
-import { useEffect, useState } from "react";
+"use client"
+
+import { useEffect, useState } from "react"
+import Image from "next/image"
 
 export default function LogoIcon() {
-  const [isDark, setIsDark] = useState(false);
+    const [isDark, setIsDark] = useState(true)
 
-  useEffect(() => {
-    const check = () => setIsDark(document.documentElement.classList.contains("dark"));
-    check();
-    const observer = new MutationObserver(check);
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
-    return () => observer.disconnect();
-  }, []);
+    useEffect(() => {
+        setIsDark(document.documentElement.classList.contains("dark"))
+        const observer = new MutationObserver(() => {
+            setIsDark(document.documentElement.classList.contains("dark"))
+        })
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] })
+        return () => observer.disconnect()
+    }, [])
 
-  return (
-    <svg width="48" height="48" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="200" height="200" rx="36" ry="36" fill={isDark ? "#F8FAFC" : "#0A1628"} />
-      <text
-        x="100"
-        y="143"
-        fontFamily="'Helvetica Neue', Helvetica, Arial, sans-serif"
-        fontSize="130"
-        fontWeight="700"
-        fill={isDark ? "#0A1628" : "#F8FAFC"}
-        textAnchor="middle"
-        letterSpacing="-4"
-      >
-        m
-      </text>
-    </svg>
-  );
+    return (
+        <Image
+            src={isDark ? "/icon-dark.svg" : "/icon-light.svg"}
+            alt="We Are Mobi logo"
+            width={56}
+            height={56}
+            className="w-12 h-12 md:w-14 md:h-14"
+            priority
+        />
+    )
 }

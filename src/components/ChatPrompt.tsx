@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 
 const placeholders = [
     "What can we build for you?",
@@ -8,22 +8,32 @@ const placeholders = [
     "Tell us your idea.",
     "Need an MVP? Let's talk.",
     "AI, mobile, web — ask anything.",
-];
+]
 
 export default function ChatPrompt() {
-    const [index, setIndex] = useState(0);
-    const [visible, setVisible] = useState(true);
+    const [index, setIndex] = useState(0)
+    const [visible, setVisible] = useState(true)
+    const [isDark, setIsDark] = useState(true)
+
+    useEffect(() => {
+        setIsDark(document.documentElement.classList.contains("dark"))
+        const observer = new MutationObserver(() => {
+            setIsDark(document.documentElement.classList.contains("dark"))
+        })
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] })
+        return () => observer.disconnect()
+    }, [])
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setVisible(false);
+            setVisible(false)
             setTimeout(() => {
-                setIndex((prev) => (prev + 1) % placeholders.length);
-                setVisible(true);
-            }, 400);
-        }, 3000);
-        return () => clearInterval(interval);
-    }, []);
+                setIndex((prev) => (prev + 1) % placeholders.length)
+                setVisible(true)
+            }, 400)
+        }, 3000)
+        return () => clearInterval(interval)
+    }, [])
 
     return (
         <div className="w-full max-w-2xl animate-entry-delay-2">
@@ -31,7 +41,7 @@ export default function ChatPrompt() {
                 className="flex items-center gap-3 px-5 py-4 rounded-2xl backdrop-blur-sm"
                 style={{
                     backgroundColor: "var(--surface)",
-                    border: "1px solid var(--border)",
+                    border: `1px solid ${isDark ? "var(--border)" : "#CBD5E1"}`,
                 }}
             >
                 <input
@@ -40,10 +50,7 @@ export default function ChatPrompt() {
                     style={{ color: "var(--text-primary)" }}
                     placeholder=""
                 />
-                <span
-                    className="cursor-blink text-lg"
-                    style={{ color: "var(--text-muted)" }}
-                >
+                <span className="cursor-blink text-lg" style={{ color: "var(--text-muted)" }}>
           |
         </span>
                 <span
@@ -59,16 +66,18 @@ export default function ChatPrompt() {
                     aria-label="Submit"
                     className="w-8 h-8 flex items-center justify-center rounded-lg transition-colors duration-200"
                     style={{ color: "var(--text-muted)" }}
-                    onMouseEnter={(e) =>
-                        (e.currentTarget.style.color = "var(--accent-cyan)")
-                    }
-                    onMouseLeave={(e) =>
-                        (e.currentTarget.style.color = "var(--text-muted)")
-                    }
+                    onMouseEnter={(e) => {
+                        e.currentTarget.style.color = "var(--text-primary)"
+                        e.currentTarget.style.border = "1px solid var(--text-muted)"
+                    }}
+                    onMouseLeave={(e) => {
+                        e.currentTarget.style.color = "var(--text-muted)"
+                        e.currentTarget.style.border = "none"
+                    }}
                 >
                     ↑
                 </button>
             </div>
         </div>
-    );
+    )
 }
