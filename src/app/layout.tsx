@@ -38,22 +38,20 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning className={`${syne.variable} ${inter.variable}`}>
-      <head>
-        <script
+      <body style={{ fontFamily: 'var(--font-inter), sans-serif' }}>
+      <script
           dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                var stored = localStorage.getItem('theme');
-                var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                if (stored === 'dark' || (!stored && prefersDark)) {
-                  document.documentElement.classList.add('dark');
-                }
-              })();
-            `,
+            __html: `(function() {
+              var stored = localStorage.getItem('theme');
+              var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+              if (stored === 'dark' || (!stored && prefersDark)) {
+                document.documentElement.classList.add('dark');
+              }
+            })();`,
           }}
-        />
-      </head>
-      <body style={{ fontFamily: 'var(--font-inter), sans-serif' }}>{children}</body>
+      />
+      {children}
+      </body>
     </html>
   )
 }
