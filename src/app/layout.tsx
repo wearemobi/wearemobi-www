@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
-import { Syne, Inter } from 'next/font/google'
+import { Urbanist, Inter } from 'next/font/google'
 import './globals.css'
 import React from 'react'
 
-const syne = Syne({
-  subsets: ['latin'],
-  weight: ['800'],
-  display: 'swap',
-  variable: '--font-syne',
+const urbanist = Urbanist({
+    subsets: ['latin'],
+    weight: ['800'],
+    display: 'swap',
+    variable: '--font-urbanist',
 })
 
 const inter = Inter({
@@ -23,9 +23,7 @@ export const metadata: Metadata = {
   description: 'AI-native nearshore software development. Mobile, web & AI solutions.',
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: '32x32' },
-      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+      { url: '/icon-light.svg', type: 'image/svg+xml' },
     ],
   },
   openGraph: {
@@ -37,7 +35,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${syne.variable} ${inter.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${urbanist.variable} ${inter.variable}`}>
       <body style={{ fontFamily: 'var(--font-inter), sans-serif' }}>
       <script
           dangerouslySetInnerHTML={{

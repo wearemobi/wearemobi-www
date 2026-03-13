@@ -21,8 +21,8 @@ export default function LogoIcon() {
             alt="We Are Mobi logo"
             width={56}
             height={56}
-            className="w-12 h-12 md:w-14 md:h-14"
-            priority
+            className="w-24 h-24 md:w-28 md:h-28"
+            loading="eager"
         />
     )
 }

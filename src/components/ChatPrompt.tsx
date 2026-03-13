@@ -47,7 +47,7 @@ export default function ChatPrompt() {
                 <input
                     type="text"
                     className="flex-1 bg-transparent outline-none text-base"
-                    style={{ color: "var(--text-primary)" }}
+                    style={{ color: "var(--text-primary)", fontFamily: "var(--font-inter), sans-serif"  }}
                     placeholder=""
                 />
                 <span className="cursor-blink text-lg" style={{ color: "var(--text-muted)" }}>
