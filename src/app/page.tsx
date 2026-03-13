@@ -11,8 +11,8 @@ export default function Home() {
         <ThemeToggle />
         <LogoBlock />
         <ChatPrompt />
-        <footer className="absolute bottom-6 text-sm" style={{ color: "var(--text-muted)" }}>
-          <a href="https://wearemobi.com" style={{ color: "var(--text-muted)", textDecoration: "none" }}>
+        <footer className="absolute bottom-6 text-sm" style={{ color: "var(--text-muted)", fontFamily: "var(--font-inter), sans-serif" }}>
+        <a href="https://wearemobi.com" style={{ color: "var(--text-muted)", textDecoration: "none" }}>
             wearemobi.com
           </a>
           {" · "}
