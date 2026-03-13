@@ -1,5 +1,7 @@
 # SPEC-v1.2.md — wearemobi-www
+
 ## We Are Mobi · Website v1.2 — Branding, Polish & Dev Tooling
+
 > Stack: Next.js 16 App Router · Tailwind CSS v4
 > Methodology: Spec Driven Development — no code without an approved spec
 > Builds on: docs/SPEC-v1.1.md
@@ -21,6 +23,7 @@ No new pages. No new features. No AI integration.
 Add `™` after `WE ARE MOBI` in the LogoBlock component.
 
 **Spec:**
+
 - Symbol: `™` (U+2122)
 - Rendered as: `WE ARE MOBI™`
 - Style: `text-xs`, `align-super`, `--text-muted` color
@@ -33,6 +36,7 @@ Add `™` after `WE ARE MOBI` in the LogoBlock component.
 Update the inline SVG logo icon.
 
 **Spec:**
+
 - Remove border radius → `rounded-none` (sharp square)
 - New size: `56x56px` desktop · `48x48px` mobile (up from 48/40)
 - Black background, white `M` lettermark — no change to content
@@ -45,6 +49,7 @@ Update the inline SVG logo icon.
 Cloudflare Email Forwarding is being configured. Re-enable the email in the footer.
 
 **Spec:**
+
 - Current: `wearemobi.com · contact@wearemobi.com` (hidden or removed in v1.1)
 - New: restore `wearemobi.com · contact@wearemobi.com`
 - Email renders as a `mailto:` link
@@ -57,6 +62,7 @@ Cloudflare Email Forwarding is being configured. Re-enable the email in the foot
 The chat input border is too subtle in light mode. Increase contrast.
 
 **Spec:**
+
 - Dark mode: no change
 - Light mode: border color → `#CBD5E1` (up from current `--border`)
 - Apply only to the prompt bar component (`ChatPrompt.tsx`)
@@ -68,6 +74,7 @@ The chat input border is too subtle in light mode. Increase contrast.
 Replace the default Next.js favicon with the Mobi `M` icon.
 
 **Spec:**
+
 - Format: `.ico` (32x32) + `.png` (192x192, 512x512) for PWA readiness
 - Design: black square, white `M` — matches logo icon
 - Files go in `/public`
@@ -81,6 +88,7 @@ Replace the default Next.js favicon with the Mobi `M` icon.
 Audit current font loading and optimize.
 
 **Spec:**
+
 - Confirm only `Syne` and `Inter` are loaded (no unused fonts)
 - Use `next/font/google` with `display: swap` for both
 - Remove any `@import` from CSS — fonts must load via `next/font` only
@@ -95,11 +103,11 @@ Shift palette to grayscale-first. Cyan is on hold until corporate color is defin
 
 **Spec:**
 
-| Token | Current | New |
-|---|---|---|
-| `--accent-cyan` | `#00C2FF` | `#F8FAFC` (near-white) |
-| Submit button hover | cyan | white with dark border |
-| Any cyan text/border | cyan | `--text-muted` or white |
+| Token                | Current   | New                     |
+| -------------------- | --------- | ----------------------- |
+| `--accent-cyan`      | `#00C2FF` | `#F8FAFC` (near-white)  |
+| Submit button hover  | cyan      | white with dark border  |
+| Any cyan text/border | cyan      | `--text-muted` or white |
 
 - Do not remove the `--accent-cyan` CSS variable — comment it with `/* on hold */`
 - No cyan visible anywhere in the UI after this change
@@ -112,6 +120,7 @@ Shift palette to grayscale-first. Cyan is on hold until corporate color is defin
 Ensure all SVGs in the site match the black & white official logo style.
 
 **Spec:**
+
 - Audit all SVGs in `/public` and components
 - Remove any colored or off-brand SVGs not used in production
 - Theme toggle icons (sun/moon): must use `currentColor` — no hardcoded colors
@@ -126,6 +135,7 @@ Add code formatting and linting tooling to the repo.
 **Spec:**
 
 **Prettier:**
+
 ```json
 {
   "semi": false,
@@ -137,12 +147,14 @@ Add code formatting and linting tooling to the repo.
 ```
 
 **ESLint:**
+
 - Extend `next/core-web-vitals`
 - No custom rules in v1.2 — defaults only
 - Add `lint` script to `package.json`: `"lint": "next lint"`
 - Add `format` script: `"format": "prettier --write ."`
 
 Files to create:
+
 - `.prettierrc`
 - `.eslintrc.json` (if not already present)
 - `.prettierignore` → ignore `node_modules`, `.next`, `public`
@@ -152,6 +164,7 @@ Files to create:
 ### 2.10 Prod Optimization
 
 **Spec:**
+
 - Confirm `next.config.js` has `images.unoptimized: false`
 - Enable `compress: true` in next config
 - Verify `"build"` script runs without warnings
@@ -162,6 +175,7 @@ Files to create:
 ### 2.11 Clean Unused SVGs in `/public`
 
 **Spec:**
+
 - Audit all files in `/public`
 - Delete any SVG not referenced in code (Vercel, Next.js defaults, etc.)
 - Keep only: favicon files + any SVG actively used in components
@@ -174,10 +188,12 @@ Files to create:
 Add a basic Open Graph image for link previews.
 
 **Spec:**
+
 - File: `/public/og-image.png`
 - Size: `1200x630px`
 - Design: dark background (`#0A1628`), white `WE ARE MOBI™` centered, tagline below in muted
 - Reference in `app/layout.tsx`:
+
 ```tsx
 openGraph: {
   title: 'We Are Mobi',
@@ -185,6 +201,7 @@ openGraph: {
   images: ['/og-image.png'],
 }
 ```
+
 - Static file — no dynamic OG in v1.2
 
 ---
@@ -194,6 +211,7 @@ openGraph: {
 Confirm the contributing URL in README points to the org profile.
 
 **Spec:**
+
 - URL: `https://github.com/wearemobi`
 - Verify it renders correctly on GitHub
 - No other README changes in this spec

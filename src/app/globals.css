@@ -22,7 +22,9 @@
 body {
   background-color: var(--bg);
   color: var(--text-primary);
-  transition: background-color 300ms, color 300ms;
+  transition:
+    background-color 300ms,
+    color 300ms;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

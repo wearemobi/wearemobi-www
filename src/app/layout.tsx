@@ -4,10 +4,10 @@ import './globals.css'
 import React from 'react'
 
 const urbanist = Urbanist({
-    subsets: ['latin'],
-    weight: ['800'],
-    display: 'swap',
-    variable: '--font-urbanist',
+  subsets: ['latin'],
+  weight: ['800'],
+  display: 'swap',
+  variable: '--font-urbanist',
 })
 
 const inter = Inter({
@@ -22,9 +22,7 @@ export const metadata: Metadata = {
   title: 'We Are Mobi — Transforming ideas into high-impact digital solutions',
   description: 'AI-native nearshore software development. Mobile, web & AI solutions.',
   icons: {
-    icon: [
-      { url: '/icon-light.svg', type: 'image/svg+xml' },
-    ],
+    icon: [{ url: '/icon-light.svg', type: 'image/svg+xml' }],
   },
   openGraph: {
     title: 'We Are Mobi',
@@ -37,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning className={`${urbanist.variable} ${inter.variable}`}>
       <body style={{ fontFamily: 'var(--font-inter), sans-serif' }}>
-      <script
+        <script
           dangerouslySetInnerHTML={{
             __html: `(function() {
               var stored = localStorage.getItem('theme');
@@ -47,8 +45,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               }
             })();`,
           }}
-      />
-      {children}
+        />
+        {children}
       </body>
     </html>
   )
