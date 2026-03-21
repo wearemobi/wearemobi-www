@@ -18,7 +18,7 @@ export default function LogoIcon() {
   return (
     <Image
       src={isDark ? '/icon-dark.svg' : '/icon-light.svg'}
-      alt="We Are Mobi logo"
+      alt="M.O.B.I.™"
       width={56}
       height={56}
       className="w-24 h-24 md:w-28 md:h-28"

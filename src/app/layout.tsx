@@ -19,14 +19,14 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://wearemobi.com'),
-  title: 'We Are Mobi — Transforming ideas into high-impact digital solutions',
-  description: 'AI-native nearshore software development. Mobile, web & AI solutions.',
+  title: 'M.O.B.I.™ - Transforming ideas into high-impact digital solutions',
+  description: 'M.O.B.I.™ (Machine Oriented Brilliant Ideas™) — Transforming ideas into high-impact digital solutions. We build sustainable mobile, web, and agentic AI solutions for high-impact digital transformation.',
   icons: {
     icon: [{ url: '/icon-light.svg', type: 'image/svg+xml' }],
   },
   openGraph: {
-    title: 'We Are Mobi',
-    description: 'AI-native software development from Costa Rica.',
+    title: 'M.O.B.I.™ - Transforming ideas into high-impact digital solutions',
+    description: 'M.O.B.I.™ (Machine Oriented Brilliant Ideas™) — Transforming ideas into high-impact digital solutions. We build sustainable mobile, web, and agentic AI solutions for high-impact digital transformation.',
     images: ['/og-image.png'],
   },
 }

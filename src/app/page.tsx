@@ -16,6 +16,10 @@ export default function Home() {
         className="absolute bottom-6 text-sm flex items-center gap-3"
         style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-inter), sans-serif' }}
       >
+        <span>
+          Copyright © 2026 <strong>M.O.B.I.™</strong> (Machine Oriented Brilliant Ideas™)
+        </span>
+        <span>·</span>
         <a
           href="https://wearemobi.com"
           style={{ color: 'var(--text-muted)', textDecoration: 'none' }}
