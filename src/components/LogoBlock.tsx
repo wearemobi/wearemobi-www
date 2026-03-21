@@ -15,7 +15,7 @@ export default function LogoBlock() {
           lineHeight: '1',
         }}
       >
-        M.O.B.I.
+        We Are M.O.B.I.
         <sup
           style={{
             fontFamily: 'var(--font-urbanist), sans-serif',
