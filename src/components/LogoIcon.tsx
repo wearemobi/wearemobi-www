@@ -16,13 +16,13 @@ export default function LogoIcon() {
   }, [])
 
   return (
-    <Image
-      src={isDark ? '/icon-dark.svg' : '/icon-light.svg'}
-      alt="M.O.B.I.™"
-      width={56}
-      height={56}
-      className="w-24 h-24 md:w-28 md:h-28"
-      loading="eager"
-    />
+      <Image
+          src={isDark ? '/logo-dark.svg' : '/logo-light.svg'}
+          alt="M.O.B.I.™"
+          width={400}
+          height={400}
+          className="w-28 h-28 md:w-48 md:h-48"
+          loading="eager"
+      />
   )
 }
