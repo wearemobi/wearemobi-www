@@ -1,6 +1,6 @@
-# wearemobi-www
+# <img src="https://wearemobi.com/icon-light.svg" width="24" height="24" valign="middle"> M.O.B.I.™ · wearemobi-www
 
-We Are Mobi™ — official website
+M.O.B.I.™ — official website
 
 ## Tech Stack
 
@@ -21,3 +21,8 @@ npm run dev
 ## Contributing
 
 See [Contributing Guidelines](https://github.com/wearemobi/.github/blob/main/CONTRIBUTING.md)
+
+---
+Copyright © 2026 **M.O.B.I.™** (Machine Oriented Brilliant Ideas™)  
+Transforming ideas into high-impact digital solutions. 🚀  
+[wearemobi.com](https://wearemobi.com) · contact@wearemobi.com
