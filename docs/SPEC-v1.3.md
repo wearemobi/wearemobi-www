@@ -13,11 +13,11 @@ Synchronize the public-facing website (`wearemobi-www`) with the newly establish
 ## Acceptance Criteria (Definition of Done)
 
 - [ ] Technical generation of the **SVG 2x2 Logo** (M.O. / B.I.).
-- [ ] Replacement of all "WeAreMobi" text instances with **M.O.B.I.™** on the website.
-- [ ] Implementation of the official tagline in the Hero Section.
-- [ ] Update of the site footer to match the **M.O.B.I. Standard Footer v1.0**.
-- [ ] All stakeholders (Founders) have reviewed the draft.
-- [ ] The document is merged into the `main` branch under the `docs/` folder.
+- [x] Replacement of all "WeAreMobi" text instances with **M.O.B.I.™** on the website.
+- [x] Implementation of the official tagline in the Hero Section.
+- [x] Update of the site footer to match the **M.O.B.I. Standard Footer v1.0**.
+- [x] All stakeholders (Founders) have reviewed the draft.
+- [x] The document is merged into the `main` branch under the `docs/` folder.
 
 ---
 Copyright © 2026 **M.O.B.I.™** (Machine Oriented Brilliant Ideas™)  
