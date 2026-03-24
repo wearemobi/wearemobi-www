@@ -4,13 +4,14 @@
 /* Fonts are loaded via next/font in layout.tsx — no @import needed here */
 
 @theme {
-  /* on hold: --color-accent-cyan: #00C2FF; */
   --color-bg: #f0f8ff;
   --color-surface: #ffffff;
   --color-border: #e2e8f0;
-  --color-text-primary: #0a1628;
+  --color-text-primary: #ffffff;
   --color-text-muted: #6b7280;
   --color-accent-green: #00a880;
+  --font-inter: var(--font-inter);
+  --font-urbanist: var(--font-urbanist);
 }
 
 * {
@@ -27,6 +28,7 @@ body {
     color 300ms;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 8px;
 }
 
 .dark {

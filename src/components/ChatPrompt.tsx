@@ -3,11 +3,11 @@
 import { useEffect, useState } from 'react'
 
 const placeholders = [
-  'What can we build for you?',
-  '¿Qué quieres lanzar?',
-  'Tell us your idea.',
-  "Need an MVP? Let's talk.",
-  'AI, mobile, web — ask anything.',
+    'What can we build for you?',
+    '¿Qué quieres lanzar?',
+    'Tell us your idea.',
+    "Need an MVP? Let's talk.",
+    'AI, mobile, web — ask anything.',
 ]
 
 export default function ChatPrompt() {
@@ -41,18 +41,15 @@ export default function ChatPrompt() {
       <div
         className="relative flex items-center gap-3 px-5 py-4 rounded-2xl backdrop-blur-sm"
         style={{
-          backgroundColor: 'var(--surface)',
           border: `1px solid ${isDark ? 'var(--border)' : '#CBD5E1'}`,
-          minHeight: '64px',
         }}
       >
         <input
           type="text"
           className="flex-1 bg-transparent outline-none text-base"
           style={{
-            color: 'var(--text-primary)',
-            fontFamily: 'var(--font-inter), sans-serif',
             paddingLeft: '12px',
+            minHeight: '64px',
           }}
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
@@ -62,7 +59,6 @@ export default function ChatPrompt() {
             className="absolute left-5 text-base pointer-events-none"
             style={{
               color: 'var(--text-muted)',
-              fontFamily: 'var(--font-inter), sans-serif',
               opacity: visible ? 1 : 0,
               transition: 'opacity 400ms',
             }}
@@ -70,21 +66,6 @@ export default function ChatPrompt() {
             {placeholders[index]}
           </span>
         )}
-        <button
-          aria-label="Submit"
-          className="w-8 h-8 flex items-center justify-center rounded-lg transition-colors duration-200"
-          style={{ color: 'var(--text-muted)' }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.color = 'var(--text-primary)'
-            e.currentTarget.style.border = '1px solid var(--text-muted)'
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.color = 'var(--text-muted)'
-            e.currentTarget.style.border = 'none'
-          }}
-        >
-          ↑
-        </button>
       </div>
     </div>
   )
