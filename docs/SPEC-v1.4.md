@@ -5,16 +5,16 @@ Optimize the user interface for mobile devices and refine the codebase performan
 
 ## Implementation Plan
 - [x] This issue is the trigger for a **New SPEC**.
-- [ ] Target Directory: `docs/spec/`
-- [ ] Target Filename: `docs/spec/v1.4.md`
+- [x] Target Directory: `docs/spec/`
+- [x] Target Filename: `docs/spec/v1.4.md`
 
 ## Acceptance Criteria (Definition of Done)
-- [ ] **Mobile-First Audit:** The grid logo and "M.O.B.I.™" text scale correctly without overflows on viewports ranging from 360px to 430px.
-- [ ] **Input Fix:** The "Need an MVP? Let's talk" field does not trigger auto-zoom on iOS (font-size >= 16px) and maintains proper touch targets.
-- [ ] **SVG Performance:** All .svg assets are minified and paths are verified to prevent Layout Shifts (CLS).
-- [ ] **Tailwind v4 Clean-up:** Removal of redundant classes and transition to native CSS variables in `app.css` to improve maintainability.
-- [ ] **Review:** All stakeholders (or R&D) have reviewed the draft.
-- [ ] **Merge:** The document is merged into the `main` branch under the `docs/spec/` folder.
+- [x] **Mobile-First Audit:** The grid logo and "M.O.B.I.™" text scale correctly without overflows on viewports ranging from 360px to 430px.
+- [x] **Input Fix:** The "Need an MVP? Let's talk" field does not trigger auto-zoom on iOS (font-size >= 16px) and maintains proper touch targets.
+- [x] **SVG Performance:** All .svg assets are minified and paths are verified to prevent Layout Shifts (CLS).
+- [x] **Tailwind v4 Clean-up:** Removal of redundant classes and transition to native CSS variables in `app.css` to improve maintainability.
+- [x] **Review:** All stakeholders (or R&D) have reviewed the draft.
+- [x] **Merge:** The document is merged into the `main` branch under the `docs/spec/` folder.
 
 ---
 Copyright © 2026 **M.O.B.I.™** (Machine Oriented Brilliant Ideas™)  
