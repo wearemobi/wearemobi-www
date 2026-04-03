@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Urbanist, Inter } from 'next/font/google'
 import './globals.css'
 import React from 'react'
+import Analytics from "@/components/Analytics";
 
 const urbanist = Urbanist({
   subsets: ['latin'],
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         {children}
       </body>
+      <Analytics />
     </html>
   )
 }
