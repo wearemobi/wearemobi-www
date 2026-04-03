@@ -9,10 +9,10 @@ Add basic GA4 support to wearemobi.com for analytics and visibility tracking.
 - [x] Target Filename: `docs/SPEC-v1.5.md`
 
 ## Acceptance Criteria (Definition of Done)
-- [ ] All stakeholders (or R&D) have reviewed the draft.
-- [ ] The document is merged into the `main` branch under the `docs/` folder.
-- [ ] Create G4A property in the MOBI Google Analytics account
-- [ ] Make sure it starts capturing traffic for wearemobi.com
+- [x] All stakeholders (or R&D) have reviewed the draft.
+- [x] The document is merged into the `main` branch under the `docs/` folder.
+- [x] Create G4A property in the MOBI Google Analytics account
+- [x] Make sure it starts capturing traffic for wearemobi.com
 
 ---
 Copyright © 2026 **M.O.B.I.™** (Machine Oriented Brilliant Ideas™)  
